@@ -6,6 +6,10 @@
   box-sizing: border-box;
 }
 
+img {
+  width: 100%;
+}
+
 /* color variables */
 :root {
   --dark-01: #131313;
@@ -46,10 +50,23 @@
   font-weight: 600;
 }
 
+/* shared style */
+.heading-primary {
+  font-size: 2.812rem;
+  font-weight: 700;
+  color: var(--dark-01);
+}
+.description {
+  color: var(--dark-03);
+  font-size: 1rem;
+  font-weight: 500;
+}
+
 /* display flex */
 .navbar,
 .menu,
-.banner-content {
+.banner-content,
+.feature {
   display: flex;
 }
 
@@ -95,20 +112,77 @@ header {
   font-size: 4rem;
   font-weight: 700;
 }
-.banner-content {
+.banner-description {
   text-align: center;
-  color: var(--dark-01);
-  font-size: 1rem;
+}
+
+/* feature section */
+.feature {
+  margin: 5.4rem 0.5rem;
+  align-items: center;
+  gap: 4.56rem;
+}
+.medium-font {
+  font-size: 2.812rem;
   font-weight: 500;
+  color: var(--dark-03);
 }
-.banner-image img {
-  width: 100%;
+.bold-orange {
+  color: var(--orange);
 }
+.feature-content {
+  max-width: 33.56rem;
+}
+.feature-image {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+}
+.feature-header {
+  margin-bottom: 2rem;
+}
+.feature-description {
+  margin-bottom: 2rem;
+}
+
+/* some facts */
+.facts-heading {
+  margin-bottom: 1.5rem;
+}
+.cards {
+  margin-top: 100px;
+  display: flex;
+  justify-content: space-around;
+}
+.card {
+  border: 1px solid #ff900e;
+  padding: 2.3rem;
+  border-radius: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  align-items: center;
+}
+.card > div {
+  width: 45px;
+}
+.card > h4 {
+  font-size: 2.812rem;
+  font-weight: 600;
+  color: var(--dark-02);
+}
+.card > p {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--dark-03);
+}
+
 /* responsiveness for tablet */
 @media screen and (max-width: 992px) {
   .navbar,
   .menu,
-  .banner-content {
+  .banner-content,
+  .feature {
     flex-direction: column;
   }
   .menu-item {
@@ -116,5 +190,9 @@ header {
   }
   .banner-content {
     margin-top: 2rem;
+  }
+  .feature {
+    margin-left: 1.5rem;
+    margin-right: 1.5rem;
   }
 }
