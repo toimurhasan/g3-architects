@@ -41,13 +41,20 @@ img {
 
 /* button style */
 .btn-primary {
-  border: none;
+  border: 1px solid transparent;
   border-radius: 0.5rem;
   padding: 20px 25px;
   color: #fff;
   background-color: var(--orange);
   font-size: 1.25rem;
   font-weight: 600;
+  transition: 0.5s ease;
+  cursor: pointer;
+}
+.btn-primary:hover {
+  border: 1px solid var(--orange);
+  color: var(--orange);
+  background-color: transparent;
 }
 
 /* shared style */
@@ -146,15 +153,21 @@ header {
 }
 
 /* some facts */
+.some-facts {
+  margin: 0 1.5rem;
+}
 .facts-heading {
   margin-bottom: 1.5rem;
 }
 .cards {
-  margin-top: 100px;
-  display: flex;
-  justify-content: space-around;
+  margin: 100px auto 0;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  justify-items: center;
+  gap: 2rem;
 }
 .card {
+  min-width: 240px;
   border: 1px solid #ff900e;
   padding: 2.3rem;
   border-radius: 0.5rem;
@@ -177,6 +190,31 @@ header {
   color: var(--dark-03);
 }
 
+/* sponsor */
+.sponsor .heading-primary {
+  margin-top: 11.25rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+.sponsor .description {
+  margin-bottom: 50px;
+  text-align: center;
+}
+.icons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  filter: saturate(0);
+  margin-bottom: 8.125rem;
+}
+
+/* footer */
+.footer {
+  padding: 2.375rem 25.625rem;
+  margin-bottom: 216px;
+  text-align: center;
+  background-color: var(--bg-color);
+}
 /* responsiveness for tablet */
 @media screen and (max-width: 992px) {
   .navbar,
@@ -194,5 +232,12 @@ header {
   .feature {
     margin-left: 1.5rem;
     margin-right: 1.5rem;
+  }
+  .cards {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  }
+  .icons {
+    flex-direction: column;
+    gap: 1.5rem;
   }
 }
